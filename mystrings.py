@@ -33,3 +33,4 @@ print(t)
 #part2- count where you want to stop.
 #print(full_name[5:13])- ng'ang'a
 #print(len("john"))- checking the length
+
