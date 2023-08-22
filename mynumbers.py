@@ -20,4 +20,3 @@ temp = 56.8926
 print(round(temp))
 print(round(temp,2))
 print(round(temp,3))
-string_one=
