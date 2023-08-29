@@ -10,9 +10,11 @@ else:
 
 units= int(input("Enter a number: "))
 if (units<=50):
-    print("The electricity bill is", 20)
-elif (units<=100):
-    print("The electricity bill is", 40)
-else:
-    print("The electricity bill is", 100)
+    price=(units * 20)
+elif (units>50 and units<=100):
+    price=((units-50)* 40)+1000
+else: 
+    (units>100)
+    price=((units-100)*100)+3000
+print(price)
 
