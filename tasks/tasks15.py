@@ -43,9 +43,11 @@ else:
 print("The gross salary is:", gross_salary)
 print("NHIF is:", NHIF_contribution)
 #NSSF contribution
-if gross_salary>=18000:
+if gross_salary<=18000:
     NSSF= gross_salary * 0.06
-    print("NSSF is:", NSSF)
+else:
+    NSSF=18000*0.06
+print(NSSF)
 
 #calculate an individual’s NHDF
 NHDF = gross_salary *  0.015
@@ -53,15 +55,22 @@ print("nhdf is:", NHDF)
 #calculate the taxable income
 taxable_income= gross_salary-(NSSF+NHDF)
 #calculate payee from the taxable income
+personal_relief=2400
+
 if taxable_income<=24000:
-    payee= (taxable_income*0.01)-2400
+    payee= 24000 * 0.1
+    net_payee=payee-personal_relief
 elif taxable_income>24000 and taxable_income<=32333:
-    payee= (taxable_income*0.25)-2400
+    payee= (taxable_income*0.25)
+    net_payee=payee-personal_relief
+
 else:
     taxable_income>32333
-    payee= (taxable_income*0.3)-2400
-print("PAYEE is:", payee)
+    payee= (taxable_income*0.3)
+    net_payee=payee-personal_relief
 
-#Calculate the net salary
-net_salary = gross_salary - (NHIF_contribution + NHDF +  NSSF + payee)
+print("PAYEE is:", net_payee)
+
+# Calculate the net salary
+net_salary = gross_salary - (NHIF_contribution + NHDF +  NSSF + net_payee)
 print("Net salary is:",net_salary)
