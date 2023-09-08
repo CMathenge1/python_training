@@ -61,12 +61,17 @@ if taxable_income<=24000:
     payee= 24000 * 0.1
     net_payee=payee-personal_relief
 elif taxable_income>24000 and taxable_income<=32333:
-    payee= (taxable_income*0.25)
+    payee= (taxable_income-24000)*0.25+2400
     net_payee=payee-personal_relief
+elif taxable_income>32333 and taxable_income<=500000:
+    payee=(taxable_income-32333)*0.3+4483.25
+    net_payee=payee-personal_relief
+elif taxable_income>500000 and taxable_income<=800000:
+    payee=(taxable_income-500000)*0.325+144783.35
 
 else:
-    taxable_income>32333
-    payee= (taxable_income*0.3)
+    taxable_income>800000
+    payee= (taxable_income*0.35)+ 242283.35
     net_payee=payee-personal_relief
 
 print("PAYEE is:", net_payee)
